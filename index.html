@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helwan Wings</title>
+
+    <!-- Navbar Style -->
+    <link rel="stylesheet" href="Navbar/navbar.css" />
+    <!-- Page Style -->
+    <link rel="stylesheet" href="/Home/style.css" />
+    <!-- Footer Style -->
+    <link rel="stylesheet" href="Footer/footer.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="overlay">
+      <!-- Navbar will be injected here -->
+      <header class="header" id="header">
+        <div class="container">
+          <a class="logo"><img src="/Navbar/Logo.png" alt="Logo" /></a>
+          <ul class="main-nav">
+            <li>
+              <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="./Details/details.html"
+                ><i class="fas fa-plane-departure"></i> Flying Details</a
+              >
+            </li>
+            <li>
+              <a href="booking/booking.html"
+                ><i class="fas fa-ticket-alt"></i> Booking</a
+              >
+            </li>
+            <li>
+              <a href="../Auth/Register/register.html" class="signup-btn"
+                ><i class="fas fa-user-plus"></i> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="./Contact/contactUsPage.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="./About/aboutPage.html"
+                ><i class="fas fa-info-circle"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="faq/faq.html"
+                ><i class="fas fa-question-circle"></i> FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h2>Welcome to Helwan Wings Airline</h2>
+        <p>
+          Discover our premium airline services, enjoy world-class flights, and
+          explore destinations around the globe.
+        </p>
+
+        <div class="button-group">
+          <a href="./Booking/booking.html" class="btn">Book Your Flight !</a>
+          <a href="./Details/details.html" class="btn">Flight Details</a>
+          <a href="./About/aboutPage.html" class="btn">Airport Info</a>
+        </div>
+      </main>
+      <!--  Flight Search Section -->
+      <section class="flight-search">
+        <h2>Find Your Perfect Flight</h2>
+        <div class="search-box">
+          <input type="text" placeholder="From (e.g., Cairo)" />
+          <input type="text" placeholder="To (e.g., Dubai)" />
+          <input type="date" />
+          <button class="search-btn">Search Flights</button>
+        </div>
+      </section>
+      <!-- Custom Popup -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <h3>Flight Details</h3>
+          <p id="popup-text"></p>
+          <button id="close-popup">Close</button>
+        </div>
+      </div>
+
+      <!--  Popular Destinations Section -->
+      <section class="destinations">
+        <h2>Top Destinations</h2>
+
+        <div class="dest-grid">
+          <div class="dest-item">
+            <img src="./Home/images/Dubai.jpg" alt="Dubai" />
+            <div class="dest-info">
+              <h3>Dubai</h3>
+              <p>From $350</p>
+            </div>
+          </div>
+
+          <div class="dest-item">
+            <img src="./Home/images/Istanbol.webp" alt="Istanbul" />
+            <div class="dest-info">
+              <h3>Istanbul</h3>
+              <p>From $290</p>
+            </div>
+          </div>
+
+          <div class="dest-item">
+            <img src="./Home/images/Riyadh.jpg" alt="Riyadh" />
+            <div class="dest-info">
+              <h3>Riyadh</h3>
+              <p>From $250</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="../../Navbar/Logo.png" alt="Helwan Wings Logo" />
+        </div>
+
+        <!-- Social + Follow Text -->
+        <div class="footer-social-container">
+          <p class="footer-follow">Follow us on social media :</p>
+          <div class="footer-social">
+            <a href="#" class="facebook" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="twitter" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="instagram" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="linkedin" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="tiktok" target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <p>• Call us : <a href="tel:+201234567890">+20 123 456 7890</a></p>
+            <p>
+              • Email :
+              <a href="mailto:support@helwanwings.com"
+                >support@helwanwings.com</a
+              >
+            </p>
+            <p>• Address : Helwan, Cairo, Egypt</p>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="footer-payments">
+          <h3>Payment Methods :</h3>
+          <div class="payment-icons">
+            <img src="../../Footer/images/visa.png" alt="Visa" />
+            <img src="../../Footer/images/money.png" alt="MasterCard" />
+            <img src="../../Footer/images/paypal.png" alt="PayPal" />
+            <img
+              src="../../Footer/images/SVGBrand.com_vodafone_egypt.png"
+              alt="Vodafone Cash"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Helwan Wings. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="/Home/main.js"></script>
+  </body>
+</html>

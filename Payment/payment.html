@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Payment</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="../Navbar/navbar.css" />
+    <link rel="stylesheet" href="../Footer/footer.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="overlay">
+      <header class="header" id="header">
+        <div class="container">
+          <a class="logo"><img src="/Navbar/Logo.png" alt="Logo" /></a>
+          <ul class="main-nav">
+            <li>
+              <a href="../../index.html"
+                ><i class="fa-solid fa-house"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="../../flying-details/flying-details.html"
+                ><i class="fas fa-plane-departure"></i> Flying Details</a
+              >
+            </li>
+            <li>
+              <a href="../../booking/booking.html"
+                ><i class="fas fa-ticket-alt"></i> Booking</a
+              >
+            </li>
+            <li>
+              <a href="../Auth/Register/register.html" class="signup-btn"
+                ><i class="fas fa-user-plus"></i> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="../../contact/contact.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="../../about/about.html"
+                ><i class="fas fa-info-circle"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="../../faq/faq.html"
+                ><i class="fas fa-question-circle"></i> FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="form-container">
+        <h1>Payment Details</h1>
+
+        <h2>Select Payment Method :</h2>
+        <div class="payment-methods">
+          <label>
+            <input type="radio" name="paymentType" value="card" /> Credit /
+            Debit Card
+          </label>
+          <label>
+            <input type="radio" name="paymentType" value="cash" /> Cash on
+            Arrival
+          </label>
+        </div>
+
+        <!-- Card Form -->
+        <div id="cardForm">
+          <div class="input-group">
+            <label>Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="1234 5678 9012 3456"
+            />
+          </div>
+          <div class="input-group">
+            <label>Cardholder Name</label>
+            <input type="text" id="cardName" placeholder="John Doe" />
+          </div>
+          <div class="input-group">
+            <label>Expiry Date</label>
+            <input type="month" id="expiry" />
+          </div>
+          <div class="input-group">
+            <label>CVV</label>
+            <input type="password" id="cvv" placeholder="123" />
+          </div>
+
+          <!-- Billing Address -->
+          <div id="billingAddress">
+            <h2>Billing Address</h2>
+            <div class="input-group">
+              <label>Country</label>
+              <select id="country">
+                <option selected disabled>Select Country</option>
+                <option>Egypt</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>City</label>
+              <input type="text" id="city" placeholder="Your city" />
+            </div>
+            <div class="input-group">
+              <label>Address</label>
+              <input
+                type="text"
+                id="address"
+                placeholder="Street, building, floor..."
+              />
+            </div>
+            <div class="input-group">
+              <label>Postal Code</label>
+              <input type="text" id="postalCode" placeholder="Postal code" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Cash Info -->
+        <div id="cashInfo">
+          <p>Please pay at the airport upon arrival.</p>
+        </div>
+
+        <button id="payBtn">Confirm Payment</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="../../Navbar/Logo.png" alt="Helwan Wings Logo" />
+        </div>
+        <div class="footer-social-container">
+          <p class="footer-follow">Follow us on social media :</p>
+          <div class="footer-social">
+            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+          </div>
+          <div class="footer-contact">
+            <p>• Call us : <a href="tel:+201234567890">+20 123 456 7890</a></p>
+            <p>
+              • Email :
+              <a href="mailto:support@helwanwings.com"
+                >support@helwanwings.com</a
+              >
+            </p>
+            <p>• Address : Helwan, Cairo, Egypt</p>
+          </div>
+        </div>
+        <div class="footer-payments">
+          <h3>Payment Methods :</h3>
+          <div class="payment-icons">
+            <img src="../../Footer/images/visa.png" alt="Visa" />
+            <img src="../../Footer/images/money.png" alt="MasterCard" />
+            <img src="../../Footer/images/paypal.png" alt="PayPal" />
+            <img
+              src="../../Footer/images/SVGBrand.com_vodafone_egypt.png"
+              alt="Vodafone Cash"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Helwan Wings. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="payment.js"></script>
+  </body>
+</html>

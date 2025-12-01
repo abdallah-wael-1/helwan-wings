@@ -1,0 +1,425 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Background Blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/background-home.jpg") center/cover
+    no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+/* Dark overlay */
+.overlay {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(32, 31, 31, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main content */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  width: 50%;
+  margin-top: 160px;
+  z-index: 1;
+}
+
+.content h2 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px #00000050;
+}
+
+.content p {
+  font-size: 24px;
+  color: #fff;
+  background: #00000050;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.button-group .btn {
+  background: #0077b6;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: 2px solid #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px #0077b650;
+}
+
+.button-group .btn:hover {
+  background: #013a63;
+  box-shadow: 0 8px 14px #00000040;
+  transform: scale(1.05);
+}
+
+/* Flight Search Section */
+.flight-search {
+  width: 60%;
+  margin: 120px auto 0;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+
+  /* Glass Effect Background */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+
+  /* Border + Shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.flight-search h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px #00000080;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.search-box input {
+  padding: 14px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ffffff80;
+  outline: none;
+  width: 220px;
+
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 10px #0077b680;
+}
+
+/* Search Button */
+.search-btn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #0077b6, #0096c7);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 10px #00000060;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #013a63, #0077b6);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px #00000080;
+}
+/*  Popular Destinations */
+.destinations {
+  width: 90%;
+  margin: 100px auto;
+  text-align: center;
+  color: #fff;
+}
+
+.destinations h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 6px #000;
+  position: relative;
+  display: inline-block;
+}
+
+.destinations h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 4px;
+  background: #0077b6;
+  border-radius: 5px;
+}
+
+/* Grid Layout */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Each Destination Card */
+.dest-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  height: 330px;
+  cursor: pointer;
+
+  /* Shadow */
+  box-shadow: 0 10px 20px #00000070;
+
+  transition: 0.4s;
+}
+
+/* Image Style */
+.dest-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* Dark Overlay */
+.dest-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #00000040, #000000d0);
+  transition: 0.4s;
+}
+
+/* Text on Card */
+.dest-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.dest-info h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 0 8px #000;
+}
+
+.dest-info p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Hover Animations */
+.dest-item:hover img {
+  transform: scale(1.12);
+}
+
+.dest-item:hover::after {
+  background: linear-gradient(180deg, #00000010, #000000e0);
+}
+
+/* Popup Background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup Box */
+.popup-content {
+  background: #fff;
+  color: #000;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  animation: pop 0.3s ease;
+}
+
+/* Animation */
+@keyframes pop {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
+  color: #0077b6;
+  font-size: 24px;
+}
+
+#close-popup {
+  padding: 10px 18px;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+#close-popup:hover {
+  background: #005f8a;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .content h2 {
+    font-size: 35px;
+  }
+
+  .content p {
+    font-size: 18px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .btn {
+    width: 95%;
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .content h2 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .button-group .btn {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .flight-search {
+    width: 80%;
+    padding: 25px;
+  }
+
+  .flight-search h2 {
+    font-size: 32px;
+  }
+
+  .search-box input {
+    width: 180px;
+    font-size: 16px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flight-search {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .flight-search h2 {
+    font-size: 28px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box input,
+  .search-btn {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .flight-search h2 {
+    font-size: 24px;
+  }
+
+  .search-box input,
+  .search-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}

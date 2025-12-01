@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../../Navbar/navbar.css" />
+    <link rel="stylesheet" href="../../Footer/footer.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="overlay">
+      <!-- Navbar -->
+      <header class="header" id="header">
+        <div class="container">
+          <a class="logo"><img src="/Navbar/Logo.png" alt="Logo" /></a>
+          <ul class="main-nav">
+            <li>
+              <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="../../Details/details.html"
+                ><i class="fas fa-plane-departure"></i> Flying Details</a
+              >
+            </li>
+            <li>
+              <a href="../../booking/booking.html"
+                ><i class="fas fa-ticket-alt"></i> Booking</a
+              >
+            </li>
+            <li>
+              <a href="#" class="signup-btn"
+                ><i class="fas fa-user-plus"></i> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="../../Contact/contactUsPage.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="../../About/aboutPage.html"
+                ><i class="fas fa-info-circle"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="../../FAQ/faq.html"
+                ><i class="fas fa-question-circle"></i> FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div class="form-container">
+        <h1>Sign Up</h1>
+        <div id="error-message" class="error"></div>
+        <form action="#">
+          <!-- Username -->
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" />
+            <span class="icon"><i class="fa-solid fa-user"></i></span>
+          </div>
+          <!-- Email -->
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Username"
+            />
+            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          </div>
+          <!-- Password -->
+          <div class="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+            <span class="eye-icon" id="togglePassword"
+              ><i class="fa-solid fa-eye-slash"></i
+            ></span>
+            <small class="field-error" id="passwordError"></small>
+          </div>
+          <div class="options">
+            <label
+              ><input type="checkbox" name="terms" /> I agree to the terms &
+              conditions</label
+            >
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p class="signup-link">
+          Already have an account? <a href="../Login/login.html">Login</a>
+        </p>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <footer class="footer">
+      <div class="footer-top">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="../../Navbar/Logo.png" alt="Helwan Wings Logo" />
+        </div>
+
+        <!-- Social + Follow Text -->
+        <div class="footer-social-container">
+          <p class="footer-follow">Follow us on social media :</p>
+          <div class="footer-social">
+            <a href="#" class="facebook" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="twitter" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="instagram" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="linkedin" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="tiktok" target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <p>• Call us : <a href="tel:+201234567890">+20 123 456 7890</a></p>
+            <p>
+              • Email :
+              <a href="mailto:support@helwanwings.com"
+                >support@helwanwings.com</a
+              >
+            </p>
+            <p>• Address : Helwan, Cairo, Egypt</p>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="footer-payments">
+          <h3>Payment Methods :</h3>
+          <div class="payment-icons">
+            <img src="../../Footer/images/visa.png" alt="Visa" />
+            <img src="../../Footer/images/money.png" alt="MasterCard" />
+            <img src="../../Footer/images/paypal.png" alt="PayPal" />
+            <img
+              src="../../Footer/images/SVGBrand.com_vodafone_egypt.png"
+              alt="Vodafone Cash"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Helwan Wings. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="./register.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Background */
+body {
+  background-image: url("faq plane.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(30, 30, 30, 0.65);
+  padding-bottom: 50px;
+}
+
+/* PAGE TITLE */
+.head {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.head h1 {
+  font-size: 3.5rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  text-shadow: 2px 2px 6px #000;
+  position: relative;
+}
+
+.head h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 4px;
+  background: #0077b6;
+  border-radius: 5px;
+}
+
+/* CARDS GRID */
+.cards-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* FAQ CARD */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-left: 5px solid #48a1ff;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Question */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h3 {
+  font-size: 21px;
+  color: #0056b3;
+}
+
+.card i {
+  transition: 0.3s;
+  color: #0056b3;
+}
+
+/* Answer */
+.card-body p {
+  display: none;
+  margin-top: 12px;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.5;
+}
+
+/* Active State */
+.card.active p {
+  display: block;
+}
+
+.card.active h3 i {
+  transform: rotate(180deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .head h1 {
+    font-size: 2.2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

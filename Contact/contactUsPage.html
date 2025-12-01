@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../Navbar/navbar.css" />
+    <link rel="stylesheet" href="contactUsPageStyle.css" />
+    <link rel="stylesheet" href="../Footer/footer.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="overlay">
+      <!-- Navbar -->
+      <header class="header">
+        <div class="container">
+          <a class="logo"><img src="../Navbar/Logo.png" alt="Logo" /></a>
+          <ul class="main-nav">
+            <li>
+              <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li>
+              <a href="../Details/details.html"
+                ><i class="fas fa-plane-departure"></i> Flying Details</a
+              >
+            </li>
+            <li>
+              <a href="../Booking/booking.html"
+                ><i class="fas fa-ticket-alt"></i> Booking</a
+              >
+            </li>
+            <li>
+              <a href="../Auth/Register/register.html"
+                ><i class="fas fa-user-plus"></i> Sign Up</a
+              >
+            </li>
+            <li>
+              <a href="../Contact/contactUsPage.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="../About/aboutPage.html"
+                ><i class="fas fa-info-circle"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="../FAQ/faq.html"
+                ><i class="fas fa-question-circle"></i> FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-wrapper">
+        <div class="container">
+          <div class="form-container">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Please fill in your information</p>
+
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="required">First Name</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    placeholder="Enter first name"
+                  />
+                  <span class="error-message">This field is required</span>
+                </div>
+                <div class="form-group">
+                  <label class="required">Last Name</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Enter last name"
+                  />
+                  <span class="error-message">This field is required</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="required">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="example@email.com"
+                />
+                <span class="error-message">Please enter a valid email</span>
+              </div>
+
+              <div class="form-group">
+                <label class="required">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+20" />
+                <span class="error-message"
+                  >Please enter a valid phone number</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="required">Gender</label>
+                <div class="gender-options">
+                  <label
+                    ><input type="radio" name="gender" value="male" />
+                    Male</label
+                  >
+                  <label
+                    ><input type="radio" name="gender" value="female" />
+                    Female</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="required">Government</label>
+                <select id="government">
+                  <option value="cairo">Cairo</option>
+                  <option value="giza">Giza</option>
+                  <option value="alex">Alexandria</option>
+                  <option value="aswan">Aswan</option>
+                  <!-- Add other options as needed -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Write your message here..."
+                ></textarea>
+              </div>
+
+              <div class="rating-container">
+                <div class="rating-title">Rate our service</div>
+                <div class="stars">
+                  <span class="star" data-rating="1">★</span>
+                  <span class="star" data-rating="2">★</span>
+                  <span class="star" data-rating="3">★</span>
+                  <span class="star" data-rating="4">★</span>
+                  <span class="star" data-rating="5">★</span>
+                </div>
+              </div>
+
+              <div class="checkbox-container">
+                <input type="checkbox" id="terms" />
+                <label for="terms"
+                  >I agree to the
+                  <span class="terms-link">Terms and Conditions</span></label
+                >
+              </div>
+
+              <button type="submit">Submit Form</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="../../Navbar/Logo.png" alt="Helwan Wings Logo" />
+        </div>
+
+        <!-- Social + Follow Text -->
+        <div class="footer-social-container">
+          <p class="footer-follow">Follow us on social media :</p>
+          <div class="footer-social">
+            <a href="#" class="facebook" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="twitter" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="instagram" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="linkedin" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="tiktok" target="_blank"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <p>• Call us : <a href="tel:+201234567890">+20 123 456 7890</a></p>
+            <p>
+              • Email :
+              <a href="mailto:support@helwanwings.com"
+                >support@helwanwings.com</a
+              >
+            </p>
+            <p>• Address : Helwan, Cairo, Egypt</p>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="footer-payments">
+          <h3>Payment Methods :</h3>
+          <div class="payment-icons">
+            <img src="../../Footer/images/visa.png" alt="Visa" />
+            <img src="../../Footer/images/money.png" alt="MasterCard" />
+            <img src="../../Footer/images/paypal.png" alt="PayPal" />
+            <img
+              src="../../Footer/images/SVGBrand.com_vodafone_egypt.png"
+              alt="Vodafone Cash"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Helwan Wings. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
