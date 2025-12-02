@@ -67,12 +67,7 @@ confirmBtn.addEventListener("click", function () {
 
   sessionStorage.setItem("bookingData", JSON.stringify(bookingData));
 
-  window.location.href =
-    window.location.origin +
-    window.location.pathname.replace(
-      "/Booking/booking.html",
-      "/Payment/payment.html"
-    );
+  window.location.href = "../Payment/payment.html";
 });
 
 cancelBtn.addEventListener("click", function () {
