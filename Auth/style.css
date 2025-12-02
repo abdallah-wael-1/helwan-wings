@@ -31,7 +31,7 @@ body::before {
 }
 
 .form-container {
-  margin-top: 70px; 
+  margin-top: 70px;
   background: transparent;
   padding: 2.5rem;
   border-radius: 15px;
@@ -98,6 +98,30 @@ body::before {
   accent-color: blue;
 }
 
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  background: rgba(173, 216, 230, 0.2);
+  border: 1px solid rgba(173, 216, 230, 0.4);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--main-color);
+  transition: 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+select option {
+  color: #000;
+  background-color: #fff;
+}
 .input-group .icon,
 .input-group .eye-icon {
   position: absolute;

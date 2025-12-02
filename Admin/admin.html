@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Admin Dashboard — Flights</h1>
+      <div>
+        <span id="adminName"></span>
+        <button id="logoutBtn">Log out</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <button class="add-flight-btn" id="addFlightBtn">
+        <i class="fas fa-plus"></i> Add Flight
+      </button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Flight Number</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Price</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Offer</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="flightData"></tbody>
+      </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="flightModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Add Flight</h2>
+        <form id="flightForm">
+          <label>Flight Number:</label>
+          <input type="text" name="flightNumber" required />
+
+          <label>From:</label>
+          <input type="text" name="from" required />
+
+          <label>To:</label>
+          <input type="text" name="to" required />
+
+          <label>Price (EGP):</label>
+          <input type="number" name="price" required />
+
+          <label>Departure Time:</label>
+          <input type="text" name="departure" required />
+
+          <label>Arrival Time:</label>
+          <input type="text" name="arrival" required />
+
+          <div class="checkbox-container">
+            <label>Offer:</label>
+            <input type="checkbox" name="offer" />
+          </div>
+
+          <button type="submit">Save Flight</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

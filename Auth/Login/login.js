@@ -6,34 +6,50 @@ togglePassword?.addEventListener("click", function () {
   const passwordInput = document.getElementById("password");
   const icon = this.querySelector("i");
 
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    icon.classList.replace("fa-eye-slash", "fa-eye");
-  } else {
+  if (passwordInput.type === "text") {
     passwordInput.type = "password";
     icon.classList.replace("fa-eye", "fa-eye-slash");
+  } else {
+    passwordInput.type = "text";
+    icon.classList.replace("fa-eye-slash", "fa-eye");
   }
 });
 
-loginForm?.addEventListener("submit", function (e) {
+loginForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
 
   if (!username || !password) {
-    alert("❌ Please enter both username and password.");
+    alert("❌ Please enter all fields.");
     return;
   }
 
-  // ✅ Get stored credentials
-  const storedName = localStorage.getItem("registeredName");
-  const storedPassword = localStorage.getItem("registeredPassword");
+  // Get registered user
+  const registeredUser = JSON.parse(localStorage.getItem("registeredUser"));
 
-  // ✅ Compare with input
-  if (username === storedName && password === storedPassword) {
-    alert(`✔️ Welcome, ${username}! Your login was successful.`);
-    window.location.href = "../../index.html";
+  if (!registeredUser) {
+    alert("❌ No user registered.");
+    return;
+  }
+
+  // Compare Name + Password
+  if (
+    username === registeredUser.name &&
+    password === registeredUser.password
+  ) {
+    alert(`✔️ Welcome, ${registeredUser.name}!`);
+
+    // Save current user
+    localStorage.setItem("currentUser", JSON.stringify(registeredUser));
+
+    // Redirect by role
+    if (registeredUser.role === "admin") {
+      window.location.href = "../../Admin/admin.html";
+    } else {
+      window.location.href = "../../index.html";
+    }
   } else {
     alert("❌ Invalid username or password.");
   }

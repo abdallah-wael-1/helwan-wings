@@ -27,6 +27,7 @@ form?.addEventListener("submit", (e) => {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = passwordInput.value.trim();
+  const role = document.getElementById("role").value;
   const terms = document.querySelector('input[name="terms"]').checked;
 
   if (!name || !email || !password) {
@@ -46,8 +47,14 @@ form?.addEventListener("submit", (e) => {
     return;
   }
 
-  localStorage.setItem("registeredName", name);
-  localStorage.setItem("registeredPassword", password);
+  const userData = {
+    name,
+    email,
+    password,
+    role,
+  };
+
+  localStorage.setItem("registeredUser", JSON.stringify(userData));
 
   alert("✔️ Registration successful!");
   window.location.href = "../Login/login.html";
