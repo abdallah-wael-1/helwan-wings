@@ -13,7 +13,7 @@
   <body>
     <header>
       <h1>Admin Dashboard — Flights</h1>
-      <div>
+      <div class="header-right">
         <span id="adminName"></span>
         <button id="logoutBtn">Log out</button>
       </div>
@@ -24,22 +24,26 @@
         <i class="fas fa-plus"></i> Add Flight
       </button>
 
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Flight Number</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Price</th>
-            <th>Departure</th>
-            <th>Arrival</th>
-            <th>Offer</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="flightData"></tbody>
-      </table>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Flight Number</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Price</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th>Offer</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="flightData"></tbody>
+        </table>
+      </div>
+
+      <div class="flight-cards" id="flightCards"></div>
     </div>
 
     <!-- Modal -->
@@ -61,10 +65,20 @@
           <input type="number" name="price" required />
 
           <label>Departure Time:</label>
-          <input type="text" name="departure" required />
+          <input
+            type="text"
+            name="departure"
+            placeholder="e.g., 10:30 AM"
+            required
+          />
 
           <label>Arrival Time:</label>
-          <input type="text" name="arrival" required />
+          <input
+            type="text"
+            name="arrival"
+            placeholder="e.g., 2:00 PM"
+            required
+          />
 
           <div class="checkbox-container">
             <label>Offer:</label>

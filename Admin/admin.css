@@ -18,25 +18,34 @@ header {
   padding: 20px 30px;
   background: #222;
   color: #fff;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 header h1 {
   font-size: 22px;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 header #adminName {
   font-weight: bold;
-  margin-right: 15px;
 }
 
 #logoutBtn {
   background: #ff4747;
   border: none;
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   transition: background 0.3s;
+  white-space: nowrap;
 }
 
 #logoutBtn:hover {
@@ -67,14 +76,20 @@ header #adminName {
   margin-right: 5px;
 }
 
-/* Table */
+/* Table Container */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 th,
@@ -89,8 +104,12 @@ th {
   color: #fff;
 }
 
-tr:hover {
+tbody tr:hover {
   background: #f1f1f1;
+}
+
+.actions {
+  white-space: nowrap;
 }
 
 .actions span {
@@ -98,6 +117,9 @@ tr:hover {
   cursor: pointer;
   color: #555;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
 }
 
 .actions .edit:hover {
@@ -108,9 +130,152 @@ tr:hover {
   color: #dc3545;
 }
 
+/* Card View للموبايل - مخفي بشكل افتراضي */
+.flight-cards {
+  display: none;
+}
+
+.flight-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.flight-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.flight-card-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.flight-card-id {
+  background: #222;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.flight-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.flight-card-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.flight-card-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.flight-card-value {
+  font-size: 14px;
+  color: #222;
+  font-weight: 600;
+}
+
+.flight-route {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.flight-route-city {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.flight-route-arrow {
+  color: #28a745;
+  font-size: 18px;
+}
+
+.offer-badge {
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.no-offer-badge {
+  display: inline-block;
+  background: #6c757d;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.flight-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.card-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #0056b3;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
 /* Modal */
 .modal {
-  display: none; /* هنا الحل - نبدأ بـ none */
+  display: none;
   position: fixed;
   z-index: 100;
   left: 0;
@@ -121,10 +286,11 @@ tr:hover {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  overflow-y: auto;
 }
 
 .modal.show {
-  display: flex; /* نضيف flex لما نحتاجه بس */
+  display: flex;
 }
 
 .modal-content {
@@ -136,6 +302,7 @@ tr:hover {
   position: relative;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
+  margin: auto;
 }
 
 .modal-content h2 {
@@ -213,35 +380,6 @@ tr:hover {
   color: #000;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  table,
-  th,
-  td {
-    font-size: 13px;
-  }
-
-  .modal-content {
-    max-width: 90%;
-    padding: 20px;
-  }
-
-  .add-flight-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* Animation */
 @keyframes fadeIn {
   0% {
@@ -251,5 +389,106 @@ tr:hover {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  header h1 {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* إخفاء الجدول وإظهار الكاردات */
+  .table-container {
+    display: none;
+  }
+
+  .flight-cards {
+    display: block;
+  }
+
+  .add-flight-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  header h1 {
+    font-size: 16px;
+  }
+
+  header #adminName {
+    font-size: 14px;
+  }
+
+  #logoutBtn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .flight-card {
+    padding: 15px;
+  }
+
+  .flight-card-number {
+    font-size: 16px;
+  }
+
+  .flight-card-body {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .modal-content {
+    max-width: 98%;
+    padding: 18px 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  .modal-content label {
+    font-size: 13px;
+  }
+
+  .modal-content input[type="text"],
+  .modal-content input[type="number"] {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .modal-content button[type="submit"] {
+    padding: 10px;
+    font-size: 14px;
   }
 }

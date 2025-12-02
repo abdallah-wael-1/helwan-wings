@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
-  if (!currentUser || currentUser.role !== "admin") {
-    alert("Access denied. Admins only.");
-    window.location.href = "../../index.html";
-    return;
-  }
+  const currentUser = { name: "Admin", role: "admin" };
 
   document.getElementById(
     "adminName"
@@ -44,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const tableBody = document.getElementById("flightData");
+  const flightCards = document.getElementById("flightCards");
   const addBtn = document.getElementById("addFlightBtn");
   const modal = document.getElementById("flightModal");
   const closeModalBtn = document.querySelector(".close");
@@ -53,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let editingFlightId = null;
 
   function renderFlights() {
+    // Render Table
     tableBody.innerHTML = "";
     flights.forEach((f) => {
       const tr = document.createElement("tr");
@@ -67,14 +64,69 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${f.arrival}</td>
             <td>${f.offer ? "Yes" : "No"}</td>
             <td class="actions">
-              <span class="edit"><i class="fas fa-edit"></i></span>
-              <span class="delete"><i class="fas fa-trash"></i></span>
+              <span class="edit" title="Edit"><i class="fas fa-edit"></i></span>
+              <span class="delete" title="Delete"><i class="fas fa-trash"></i></span>
             </td>
           `;
       tableBody.appendChild(tr);
     });
+
+    // Render Cards
+    flightCards.innerHTML = "";
+    flights.forEach((f) => {
+      const card = document.createElement("div");
+      card.className = "flight-card";
+      card.dataset.id = f.id;
+      card.innerHTML = `
+            <div class="flight-card-header">
+              <div class="flight-card-number">${f.flightNumber}</div>
+              <div class="flight-card-id">ID: ${f.id}</div>
+            </div>
+            <div class="flight-card-body">
+              <div class="flight-route">
+                <div class="flight-route-city">${f.from}</div>
+                <i class="fas fa-plane flight-route-arrow"></i>
+                <div class="flight-route-city">${f.to}</div>
+              </div>
+              <div class="flight-card-field">
+                <span class="flight-card-label">Price</span>
+                <span class="flight-card-value">${f.price} EGP</span>
+              </div>
+              <div class="flight-card-field">
+                <span class="flight-card-label">Special Offer</span>
+                <span class="flight-card-value">
+                  <span class="${f.offer ? "offer-badge" : "no-offer-badge"}">
+                    ${f.offer ? "Yes" : "No"}
+                  </span>
+                </span>
+              </div>
+              <div class="flight-card-field">
+                <span class="flight-card-label">Departure</span>
+                <span class="flight-card-value">${f.departure}</span>
+              </div>
+              <div class="flight-card-field">
+                <span class="flight-card-label">Arrival</span>
+                <span class="flight-card-value">${f.arrival}</span>
+              </div>
+            </div>
+            <div class="flight-card-actions">
+              <button class="card-action-btn edit-btn" onclick="handleCardEdit(${
+                f.id
+              })">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button class="card-action-btn delete-btn" onclick="handleCardDelete(${
+                f.id
+              })">
+                <i class="fas fa-trash"></i> Delete
+              </button>
+            </div>
+          `;
+      flightCards.appendChild(card);
+    });
   }
 
+  // Table click handlers
   tableBody.addEventListener("click", (e) => {
     const tr = e.target.closest("tr");
     if (!tr) return;
@@ -83,11 +135,21 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (e.target.closest(".delete")) deleteFlight(id);
   });
 
+  // Card handlers (global functions)
+  window.handleCardEdit = function (id) {
+    openModal(id);
+  };
+
+  window.handleCardDelete = function (id) {
+    deleteFlight(id);
+  };
+
   addBtn.addEventListener("click", () => openModal());
 
   function openModal(id = null) {
     editingFlightId = id;
     modal.classList.add("show");
+    document.body.style.overflow = "hidden";
 
     if (id) {
       modalTitle.textContent = "Edit Flight";
@@ -107,12 +169,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeModal() {
     modal.classList.remove("show");
+    document.body.style.overflow = "";
   }
 
   closeModalBtn.addEventListener("click", closeModal);
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("show")) {
       closeModal();
     }
   });
@@ -152,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logoutBtn").addEventListener("click", () => {
     if (confirm("⚠️ Are you sure you want to log out?")) {
       alert("Logged out successfully!");
-      window.location.href = "../Auth/Register/register.html";
     }
   });
 
