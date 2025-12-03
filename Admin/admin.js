@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const currentUser = { name: "Admin", role: "admin" };
+  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
 
   document.getElementById(
     "adminName"
