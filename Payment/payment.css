@@ -17,8 +17,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../Booking/background-booking.jpg")
-    center/cover no-repeat;
+  background: url("../Booking/background-booking.jpg") center/cover no-repeat;
   filter: blur(3px);
   z-index: -1;
 }
@@ -33,7 +32,7 @@ body::before {
 }
 
 .form-container {
-  margin-top: 150px;
+  margin-top: 70px;
   background: rgba(255, 255, 255, 0.05);
   padding: 2.5rem;
   border-radius: 15px;
@@ -85,13 +84,6 @@ body::before {
 
 .payment-methods label:hover {
   background-color: rgba(173, 216, 230, 0.2);
-}
-
-#cardForm,
-#cashInfo {
-  display: none;
-  margin-top: 20px;
-  text-align: left;
 }
 
 .input-group {
@@ -150,7 +142,6 @@ button:hover {
   background-color: #004d99;
   transform: scale(1.05);
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
