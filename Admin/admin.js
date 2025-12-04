@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("logoutBtn").addEventListener("click", () => {
     if (confirm("⚠️ Are you sure you want to log out?")) {
       alert("Logged out successfully!");
+      window.location.href = "../Auth/Register/register.html";
     }
   });
 
